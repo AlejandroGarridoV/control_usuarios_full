@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Sistema de Usuarios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Sistema de Usuarios</div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="gestion-usuarios.html" class="active">Gestión de Usuarios</a></li>
+                </ul>
+                <div class="user-info">
+                    <span id="userName">Usuario</span>
+                    <button class="btn btn-secondary" id="logoutBtn">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <div class="page-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h1 class="page-title">Gestión de Usuarios</h1>
+                <button class="btn btn-primary" id="addUserBtn">Agregar Usuario</button>
+            </div>
+            
+            <div id="alertMessage" class="alert" style="display: none;"></div>
+            
+            <div class="card">
+                <div class="table-container">
+                    <table class="data-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Foto</th>
+                                <th>Nombre Completo</th>
+                                <th>Usuario</th>
+                                <th>Tipo de Usuario</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se cargarán con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para agregar/editar usuario -->
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Usuario</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="paterno">Apellido Paterno</label>
+                        <input type="text" id="paterno" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="materno">Apellido Materno</label>
+                        <input type="text" id="materno" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="usuario" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tipoUsuario">Tipo de Usuario</label>
+                    <select id="tipoUsuario" class="form-control" required>
+                        <option value="">Seleccionar tipo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fotoPerfil">Foto de Perfil (URL)</label>
+                    <input type="text" id="fotoPerfil" class="form-control">
+                </div>
+                <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/gestion-usuarios.js"></script>
+</body>
+</html>

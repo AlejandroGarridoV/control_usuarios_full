@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos de Tecnología | Sistema de Gestión</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">SistemaGestión</div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="reportes.html">Reportes</a></li>
+                    <li><a href="acercade.html">Acerca de</a></li>
+                    <li><a href="articulos.html" class="active">Artículos</a></li>
+                </ul>
+                <div class="user-info">
+                    <span>Admin</span>
+                    <a href="login.html" class="btn btn-secondary">Cerrar Sesión</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="articles-hero">
+            <div class="hero-content">
+                <h1>Artículos de Tecnología</h1>
+                <p>Explora mis publicaciones sobre desarrollo web, inteligencia artificial, seguridad y más</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-newspaper"></i>
+                        <span>24 Artículos Publicados</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-eye"></i>
+                        <span>15K+ Lecturas</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-heart"></i>
+                        <span>1.2K Likes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filtros de categorías -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <h2>Categorías</h2>
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="web">Desarrollo Web</button>
+                    <button class="filter-btn" data-category="ai">Inteligencia Artificial</button>
+                    <button class="filter-btn" data-category="security">Seguridad</button>
+                    <button class="filter-btn" data-category="devops">DevOps</button>
+                    <button class="filter-btn" data-category="mobile">Mobile</button>
+                    <button class="filter-btn" data-category="database">Bases de Datos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de artículos -->
+        <section class="articles-list">
+            <div class="articles-header">
+                <h2>Últimos Artículos</h2>
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option value="recent">Más recientes</option>
+                        <option value="popular">Más populares</option>
+                        <option value="views">Más leídos</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="articles-container">
+                <!-- Artículo 1 -->
+                <article class="article-full" data-category="web">
+                    <div class="article-image">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-web">Desarrollo Web</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 15 Mar 2023</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 8 min lectura</span>
+                        </div>
+                        <h3 class="article-title">La Evolución de JavaScript: De ES6 a ES2023</h3>
+                        <p class="article-excerpt">Un análisis profundo de las nuevas características de JavaScript y cómo están cambiando la forma en que desarrollamos aplicaciones web modernas. Exploraremos las principales adiciones al lenguaje y su impacto en el ecosistema frontend.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 1,245</span>
+                                <span><i class="fas fa-heart"></i> 85</span>
+                                <span><i class="fas fa-comment"></i> 23</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="article-full" data-category="ai">
+                    <div class="article-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-ai">Inteligencia Artificial</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 28 Feb 2023</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 12 min lectura</span>
+                        </div>
+                        <h3 class="article-title">GPT-4 y el Futuro del Desarrollo de Software</h3>
+                        <p class="article-excerpt">Cómo las herramientas de IA están transformando el flujo de trabajo de los desarrolladores y qué podemos esperar en los próximos años. Análisis de casos de uso reales y mejores prácticas para integrar IA en proyectos de desarrollo.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 2,412</span>
+                                <span><i class="fas fa-heart"></i> 156</span>
+                                <span><i class="fas fa-comment"></i> 42</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="article-full" data-category="security">
+                    <div class="article-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-security">Seguridad</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 10 Ene 2023</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 10 min lectura</span>
+                        </div>
+                        <h3 class="article-title">Buenas Prácticas de Seguridad en APIs REST</h3>
+                        <p class="article-excerpt">Guía completa para proteger tus APIs contra vulnerabilidades comunes y ataques de inyección. Incluye implementación de autenticación JWT, rate limiting, validación de datos y monitoreo de seguridad.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 890</span>
+                                <span><i class="fas fa-heart"></i> 67</span>
+                                <span><i class="fas fa-comment"></i> 18</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="article-full" data-category="devops">
+                    <div class="article-image">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-devops">DevOps</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 5 Dic 2022</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 15 min lectura</span>
+                        </div>
+                        <h3 class="article-title">Implementando CI/CD con GitHub Actions</h3>
+                        <p class="article-excerpt">Tutorial paso a paso para automatizar tu pipeline de despliegue usando las herramientas nativas de GitHub. Desde tests automatizados hasta despliegue en producción con rollback automático.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 1,521</span>
+                                <span><i class="fas fa-heart"></i> 112</span>
+                                <span><i class="fas fa-comment"></i> 31</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 -->
+                <article class="article-full" data-category="mobile">
+                    <div class="article-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-mobile">Mobile</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 20 Nov 2022</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 9 min lectura</span>
+                        </div>
+                        <h3 class="article-title">React Native vs Flutter en 2023</h3>
+                        <p class="article-excerpt">Comparativa detallada de ambos frameworks para desarrollo móvil cross-platform, con casos de uso reales. Análisis de rendimiento, curva de aprendizaje, ecosistema y perspectivas futuras.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 1,845</span>
+                                <span><i class="fas fa-heart"></i> 98</span>
+                                <span><i class="fas fa-comment"></i> 27</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 -->
+                <article class="article-full" data-category="database">
+                    <div class="article-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">
+                            <span class="article-category category-database">Bases de Datos</span>
+                            <span class="article-date"><i class="far fa-calendar"></i> 8 Oct 2022</span>
+                            <span class="article-read-time"><i class="far fa-clock"></i> 11 min lectura</span>
+                        </div>
+                        <h3 class="article-title">Optimización de Consultas SQL Avanzada</h3>
+                        <p class="article-excerpt">Técnicas y estrategias para mejorar el rendimiento de tus consultas en bases de datos relacionales. Índices, query planning, particionamiento y herramientas de monitoreo para mantener tus bases de datos en óptimas condiciones.</p>
+                        <div class="article-footer">
+                            <div class="article-stats">
+                                <span><i class="fas fa-eye"></i> 1,125</span>
+                                <span><i class="fas fa-heart"></i> 74</span>
+                                <span><i class="fas fa-comment"></i> 19</span>
+                            </div>
+                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">10</button>
+                <button class="page-btn next-btn">Siguiente <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section">
+            <div class="newsletter-card">
+                <i class="fas fa-envelope-open-text"></i>
+                <h3>Suscríbete a mi Newsletter</h3>
+                <p>Recibe los últimos artículos sobre tecnología directamente en tu correo</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+                <p class="newsletter-note">Sin spam, solo contenido de valor. Puedes darte de baja cuando quieras.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="articles-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sistema de Gestión</h3>
+                    <p>Plataforma profesional para gestión empresarial</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="acercade.html">Acerca del Desarrollador</a></li>
+                        <li><a href="articulos.html">Artículos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> contacto@sistemagestion.com</li>
+                        <li><i class="fas fa-globe"></i> www.sistemagestion.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Sistema de Gestión &copy; 2023. Todos los derechos reservados.</p>
+                <p class="developer-credit">Desarrollado con <i class="fas fa-heart"></i> por [Tu Nombre]</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filtrado por categorías
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const articles = document.querySelectorAll('.article-full');
+                
+                // Mostrar/ocultar artículos según categoría
+                articles.forEach(article => {
+                    if (category === 'all' || article.dataset.category === category) {
+                        article.style.display = 'flex';
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Suscripción al newsletter
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            alert(`¡Gracias por suscribirte con el correo: ${email}! Te hemos enviado un email de confirmación.`);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

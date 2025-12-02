@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Usuarios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Sistema de Usuarios</div>
+                <ul class="nav-links">
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="gestion-usuarios.html">Gestión de Usuarios</a></li>
+                </ul>
+                <div class="user-info">
+                    <span id="userName">Usuario</span>
+                    <button class="btn btn-secondary" id="logoutBtn">Cerrar Sesión</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <h1 class="page-title">Dashboard</h1>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3 id="totalUsers">0</h3>
+                    <p>Total de Usuarios</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminUsers">0</h3>
+                    <p>Administradores</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="supervisorUsers">0</h3>
+                    <p>Supervisores</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="operadorUsers">0</h3>
+                    <p>Operadores</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Usuarios Registrados</h2>
+                <div class="table-container">
+                    <table class="data-table" id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Completo</th>
+                                <th>Usuario</th>
+                                <th>Tipo de Usuario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Los datos se cargarán con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
