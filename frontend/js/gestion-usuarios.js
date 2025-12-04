@@ -84,7 +84,7 @@ function renderUsuariosTable() {
         row.innerHTML = `
             <td>${usuario.id}</td>
             <td>
-                <img src="${usuario.foto_perfil || 'assets/default-avatar.png'}" alt="Foto de perfil" class="avatar" onerror="this.src='assets/default-avatar.png'">
+                <img src="${usuario.foto_perfil || 'assets/defautl-avatar.png'}" alt="Foto de perfil" class="avatar" onerror="this.src='assets/defautl-avatar.png'">
             </td>
             <td>${usuario.nombre} ${usuario.paterno} ${usuario.materno}</td>
             <td>${usuario.usuario}</td>

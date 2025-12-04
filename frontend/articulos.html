@@ -30,26 +30,53 @@
     <!-- Contenido principal -->
     <main class="container">
         <!-- Hero Section -->
-        <section class="articles-hero">
-            <div class="hero-content">
-                <h1>Artículos de Tecnología</h1>
-                <p>Explora mis publicaciones sobre desarrollo web, inteligencia artificial, seguridad y más</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <i class="fas fa-newspaper"></i>
-                        <span>24 Artículos Publicados</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-eye"></i>
-                        <span>15K+ Lecturas</span>
-                    </div>
-                    <div class="stat">
-                        <i class="fas fa-heart"></i>
-                        <span>1.2K Likes</span>
-                    </div>
-                </div>
+        <!-- Hero Section -->
+<section class="articles-hero">
+    <div class="hero-content">
+        <h1>Artículos de Tecnología</h1>
+        <p>Gestiona los artículos de la tienda - CRUD Completo</p>
+        
+        <div class="hero-actions">
+            <button class="btn btn-primary" id="addArticleBtn">
+                <i class="fas fa-plus"></i> Agregar Artículo
+            </button>
+            <button class="btn btn-secondary" id="refreshArticlesBtn">
+                <i class="fas fa-sync-alt"></i> Actualizar
+            </button>
+        </div>
+        
+        <div class="hero-stats">
+            <div class="stat">
+                <i class="fas fa-boxes"></i>
+                <span id="totalArticles">Cargando...</span>
             </div>
-        </section>
+            <div class="stat">
+                <i class="fas fa-dollar-sign"></i>
+                <span id="totalValue">Cargando...</span>
+            </div>
+            <div class="stat">
+                <i class="fas fa-layer-group"></i>
+                <span id="totalStock">Cargando...</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Buscador -->
+<section class="search-section">
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar artículo por nombre..." 
+                   class="search-input">
+            <button id="searchBtn" class="btn btn-primary">
+                <i class="fas fa-search"></i> Buscar
+            </button>
+            <button id="clearSearchBtn" class="btn btn-secondary">
+                <i class="fas fa-times"></i> Limpiar
+            </button>
+        </div>
+    </div>
+</section>
 
         <!-- Filtros de categorías -->
         <section class="filters-section">
@@ -68,176 +95,36 @@
         </section>
 
         <!-- Lista de artículos -->
-        <section class="articles-list">
-            <div class="articles-header">
-                <h2>Últimos Artículos</h2>
-                <div class="sort-options">
-                    <select class="sort-select">
-                        <option value="recent">Más recientes</option>
-                        <option value="popular">Más populares</option>
-                        <option value="views">Más leídos</option>
-                    </select>
-                </div>
+        <section class="articles-list"><!-- Lista de artículos -->
+<section class="articles-list">
+    <div class="container">
+        <div class="articles-header">
+            <h2>Catálogo de Artículos</h2>
+            <div class="sort-options">
+                <select class="sort-select" id="sortSelect">
+                    <option value="id">Ordenar por: ID</option>
+                    <option value="nombre">Ordenar por: Nombre</option>
+                    <option value="precio_asc">Ordenar por: Precio (Asc)</option>
+                    <option value="precio_desc">Ordenar por: Precio (Desc)</option>
+                    <option value="stock">Ordenar por: Stock</option>
+                </select>
             </div>
+        </div>
 
-            <div class="articles-container">
-                <!-- Artículo 1 -->
-                <article class="article-full" data-category="web">
-                    <div class="article-image">
-                        <i class="fab fa-js-square"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-web">Desarrollo Web</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 15 Mar 2023</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 8 min lectura</span>
-                        </div>
-                        <h3 class="article-title">La Evolución de JavaScript: De ES6 a ES2023</h3>
-                        <p class="article-excerpt">Un análisis profundo de las nuevas características de JavaScript y cómo están cambiando la forma en que desarrollamos aplicaciones web modernas. Exploraremos las principales adiciones al lenguaje y su impacto en el ecosistema frontend.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 1,245</span>
-                                <span><i class="fas fa-heart"></i> 85</span>
-                                <span><i class="fas fa-comment"></i> 23</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
+        <div class="alert alert-info" id="messageAlert" style="display: none;"></div>
 
-                <!-- Artículo 2 -->
-                <article class="article-full" data-category="ai">
-                    <div class="article-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-ai">Inteligencia Artificial</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 28 Feb 2023</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 12 min lectura</span>
-                        </div>
-                        <h3 class="article-title">GPT-4 y el Futuro del Desarrollo de Software</h3>
-                        <p class="article-excerpt">Cómo las herramientas de IA están transformando el flujo de trabajo de los desarrolladores y qué podemos esperar en los próximos años. Análisis de casos de uso reales y mejores prácticas para integrar IA en proyectos de desarrollo.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 2,412</span>
-                                <span><i class="fas fa-heart"></i> 156</span>
-                                <span><i class="fas fa-comment"></i> 42</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Los artículos se cargarán dinámicamente aquí -->
+        </div>
 
-                <!-- Artículo 3 -->
-                <article class="article-full" data-category="security">
-                    <div class="article-image">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-security">Seguridad</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 10 Ene 2023</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 10 min lectura</span>
-                        </div>
-                        <h3 class="article-title">Buenas Prácticas de Seguridad en APIs REST</h3>
-                        <p class="article-excerpt">Guía completa para proteger tus APIs contra vulnerabilidades comunes y ataques de inyección. Incluye implementación de autenticación JWT, rate limiting, validación de datos y monitoreo de seguridad.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 890</span>
-                                <span><i class="fas fa-heart"></i> 67</span>
-                                <span><i class="fas fa-comment"></i> 18</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artículo 4 -->
-                <article class="article-full" data-category="devops">
-                    <div class="article-image">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-devops">DevOps</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 5 Dic 2022</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 15 min lectura</span>
-                        </div>
-                        <h3 class="article-title">Implementando CI/CD con GitHub Actions</h3>
-                        <p class="article-excerpt">Tutorial paso a paso para automatizar tu pipeline de despliegue usando las herramientas nativas de GitHub. Desde tests automatizados hasta despliegue en producción con rollback automático.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 1,521</span>
-                                <span><i class="fas fa-heart"></i> 112</span>
-                                <span><i class="fas fa-comment"></i> 31</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artículo 5 -->
-                <article class="article-full" data-category="mobile">
-                    <div class="article-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-mobile">Mobile</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 20 Nov 2022</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 9 min lectura</span>
-                        </div>
-                        <h3 class="article-title">React Native vs Flutter en 2023</h3>
-                        <p class="article-excerpt">Comparativa detallada de ambos frameworks para desarrollo móvil cross-platform, con casos de uso reales. Análisis de rendimiento, curva de aprendizaje, ecosistema y perspectivas futuras.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 1,845</span>
-                                <span><i class="fas fa-heart"></i> 98</span>
-                                <span><i class="fas fa-comment"></i> 27</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Artículo 6 -->
-                <article class="article-full" data-category="database">
-                    <div class="article-image">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="article-category category-database">Bases de Datos</span>
-                            <span class="article-date"><i class="far fa-calendar"></i> 8 Oct 2022</span>
-                            <span class="article-read-time"><i class="far fa-clock"></i> 11 min lectura</span>
-                        </div>
-                        <h3 class="article-title">Optimización de Consultas SQL Avanzada</h3>
-                        <p class="article-excerpt">Técnicas y estrategias para mejorar el rendimiento de tus consultas en bases de datos relacionales. Índices, query planning, particionamiento y herramientas de monitoreo para mantener tus bases de datos en óptimas condiciones.</p>
-                        <div class="article-footer">
-                            <div class="article-stats">
-                                <span><i class="fas fa-eye"></i> 1,125</span>
-                                <span><i class="fas fa-heart"></i> 74</span>
-                                <span><i class="fas fa-comment"></i> 19</span>
-                            </div>
-                            <a href="articulo-detalle.html" class="btn btn-primary">Leer Artículo</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Paginación -->
-            <div class="pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <span class="page-dots">...</span>
-                <button class="page-btn">10</button>
-                <button class="page-btn next-btn">Siguiente <i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
+        <!-- Mensaje cuando no hay artículos -->
+        <div class="no-articles" id="noArticlesMessage" style="display: none;">
+            <i class="fas fa-box-open" style="font-size: 3rem; color: #95a5a6; margin-bottom: 1rem;"></i>
+            <h3>No hay artículos disponibles</h3>
+            <p>Agrega tu primer artículo haciendo clic en el botón "Agregar Artículo"</p>
+        </div>
+    </div>
+</section>
         <!-- Newsletter -->
         <section class="newsletter-section">
             <div class="newsletter-card">
@@ -251,6 +138,81 @@
                 <p class="newsletter-note">Sin spam, solo contenido de valor. Puedes darte de baja cuando quieras.</p>
             </div>
         </section>
+        <!-- Modal para agregar/editar artículo -->
+<div class="modal" id="articleModal">
+    <div class="modal-content" style="max-width: 600px;">
+        <div class="modal-header">
+            <h2 id="modalTitle">Agregar Artículo</h2>
+            <button class="close-modal" id="closeModal">&times;</button>
+        </div>
+        <form id="articleForm">
+            <input type="hidden" id="articleId">
+            
+            <div class="form-group">
+                <label for="articleName">Nombre del Artículo *</label>
+                <input type="text" id="articleName" class="form-control" required 
+                       maxlength="50" placeholder="Ej: HTML y CSS Pro">
+            </div>
+            
+            <div class="form-group">
+                <label for="articleDescription">Descripción *</label>
+                <textarea id="articleDescription" class="form-control" rows="3" required
+                          maxlength="250" placeholder="Descripción del artículo..."></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="articleStock">Existencias *</label>
+                    <input type="number" id="articleStock" class="form-control" 
+                           min="0" required placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="articlePrice">Precio ($) *</label>
+                    <input type="number" id="articlePrice" class="form-control" 
+                           min="0" step="0.01" required placeholder="0.00">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="articleCategory">Categoría *</label>
+                <select id="articleCategory" class="form-control" required>
+                    <option value="">Seleccionar categoría...</option>
+                    <!-- Las categorías se cargarán dinámicamente -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="articlePhoto">URL de la Imagen</label>
+                <input type="text" id="articlePhoto" class="form-control" 
+                       placeholder="Ej: img/html_css.jpg">
+                <small class="form-text">Dejar vacío para usar imagen por defecto</small>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="saveBtn">Guardar Artículo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de confirmación para eliminar -->
+<div class="modal" id="deleteModal">
+    <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-header">
+            <h2>Confirmar Eliminación</h2>
+            <button class="close-modal" id="closeDeleteModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>¿Está seguro de que desea eliminar el artículo "<span id="deleteArticleName"></span>"?</p>
+            <p class="text-danger"><i class="fas fa-exclamation-triangle"></i> Esta acción no se puede deshacer.</p>
+        </div>
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Eliminar</button>
+        </div>
+    </div>
+</div>
     </main>
 
     <!-- Footer -->
@@ -318,5 +280,370 @@
             this.reset();
         });
     </script>
+    <script>
+const API_BASE_URL = 'http://100.29.29.83:5000/api';
+let articulos = [];
+let categorias = [];
+let articuloAEliminar = null;
+
+// Verificar si el usuario está autenticado
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Verificar si es administrador (solo admins pueden gestionar artículos)
+    const esAdmin = user.tipo_usuario === 'Administrador';
+    if (!esAdmin) {
+        document.getElementById('addArticleBtn').style.display = 'none';
+    }
+    
+    // Cargar datos
+    loadCategorias();
+    loadArticulos();
+    
+    // Configurar eventos
+    setupEventListeners();
+});
+
+// Configurar event listeners
+function setupEventListeners() {
+    // Botones principales
+    document.getElementById('addArticleBtn').addEventListener('click', () => openModal());
+    document.getElementById('refreshArticlesBtn').addEventListener('click', loadArticulos);
+    document.getElementById('searchBtn').addEventListener('click', buscarArticulos);
+    document.getElementById('clearSearchBtn').addEventListener('click', () => {
+        document.getElementById('searchInput').value = '';
+        loadArticulos();
+    });
+    
+    // Buscar al presionar Enter
+    document.getElementById('searchInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') buscarArticulos();
+    });
+    
+    // Ordenar
+    document.getElementById('sortSelect').addEventListener('change', ordenarArticulos);
+    
+    // Modal de artículo
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    document.getElementById('cancelBtn').addEventListener('click', closeModal);
+    document.getElementById('articleForm').addEventListener('submit', handleFormSubmit);
+    
+    // Modal de eliminación
+    document.getElementById('closeDeleteModal').addEventListener('click', closeDeleteModal);
+    document.getElementById('cancelDeleteBtn').addEventListener('click', closeDeleteModal);
+    document.getElementById('confirmDeleteBtn').addEventListener('click', confirmarEliminacion);
+}
+
+// Cargar categorías
+async function loadCategorias() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/familias`);
+        categorias = await response.json();
+        
+        const select = document.getElementById('articleCategory');
+        select.innerHTML = '<option value="">Seleccionar categoría...</option>';
+        
+        categorias.forEach(categoria => {
+            const option = document.createElement('option');
+            option.value = categoria.id;
+            option.textContent = categoria.nombre;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error('Error al cargar categorías:', error);
+        showMessage('Error al cargar categorías', 'error');
+    }
+}
+
+// Cargar artículos
+async function loadArticulos() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/articulos`);
+        articulos = await response.json();
+        
+        renderArticulos();
+        updateStats();
+    } catch (error) {
+        console.error('Error al cargar artículos:', error);
+        showMessage('Error al cargar artículos', 'error');
+    }
+}
+
+// Buscar artículos por nombre
+async function buscarArticulos() {
+    const nombre = document.getElementById('searchInput').value.trim();
+    
+    if (!nombre) {
+        loadArticulos();
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/articulos/buscar/${encodeURIComponent(nombre)}`);
+        articulos = await response.json();
+        
+        renderArticulos();
+        showMessage(`Se encontraron ${articulos.length} resultados para "${nombre}"`, 'info');
+    } catch (error) {
+        console.error('Error al buscar artículos:', error);
+        showMessage('Error al buscar artículos', 'error');
+    }
+}
+
+// Renderizar artículos en la cuadrícula
+function renderArticulos() {
+    const grid = document.getElementById('articlesGrid');
+    const noArticlesMessage = document.getElementById('noArticlesMessage');
+    
+    if (articulos.length === 0) {
+        grid.innerHTML = '';
+        noArticlesMessage.style.display = 'block';
+        return;
+    }
+    
+    noArticlesMessage.style.display = 'none';
+    
+    grid.innerHTML = articulos.map(articulo => `
+        <div class="article-card" data-id="${articulo.id}">
+            <div class="article-card-image">
+                <img src="${articulo.foto || 'img/default.jpg'}" 
+                     alt="${articulo.nombre}"
+                     onerror="this.src='img/default.jpg'">
+            </div>
+            <div class="article-card-content">
+                <div class="article-card-header">
+                    <span class="article-category">${articulo.familia_nombre}</span>
+                    <span class="article-stock ${articulo.existencias < 5 ? 'stock-low' : ''}">
+                        <i class="fas fa-box"></i> ${articulo.existencias} unidades
+                    </span>
+                </div>
+                <h3 class="article-card-title">${articulo.nombre}</h3>
+                <p class="article-card-description">${articulo.descripcion}</p>
+                
+                <div class="article-card-footer">
+                    <div class="article-card-price">
+                        <span class="price">$${articulo.precio.toFixed(2)}</span>
+                        <span class="price-label">Precio</span>
+                    </div>
+                    <div class="article-card-actions">
+                        <button class="btn btn-sm btn-secondary edit-article" data-id="${articulo.id}">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="btn btn-sm btn-danger delete-article" data-id="${articulo.id}">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    // Agregar eventos a los botones
+    document.querySelectorAll('.edit-article').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const articuloId = e.target.closest('button').dataset.id;
+            editarArticulo(articuloId);
+        });
+    });
+    
+    document.querySelectorAll('.delete-article').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const articuloId = e.target.closest('button').dataset.id;
+            confirmarEliminar(articuloId);
+        });
+    });
+}
+
+// Ordenar artículos
+function ordenarArticulos() {
+    const sortBy = document.getElementById('sortSelect').value;
+    
+    switch(sortBy) {
+        case 'nombre':
+            articulos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            break;
+        case 'precio_asc':
+            articulos.sort((a, b) => a.precio - b.precio);
+            break;
+        case 'precio_desc':
+            articulos.sort((a, b) => b.precio - a.precio);
+            break;
+        case 'stock':
+            articulos.sort((a, b) => b.existencias - a.existencias);
+            break;
+        default: // id
+            articulos.sort((a, b) => a.id - b.id);
+    }
+    
+    renderArticulos();
+}
+
+// Actualizar estadísticas
+function updateStats() {
+    if (articulos.length === 0) {
+        document.getElementById('totalArticles').textContent = '0 Artículos';
+        document.getElementById('totalValue').textContent = '$0.00';
+        document.getElementById('totalStock').textContent = '0 Unidades';
+        return;
+    }
+    
+    const totalArticulos = articulos.length;
+    const valorTotal = articulos.reduce((sum, art) => sum + (art.precio * art.existencias), 0);
+    const stockTotal = articulos.reduce((sum, art) => sum + art.existencias, 0);
+    
+    document.getElementById('totalArticles').textContent = `${totalArticulos} Artículos`;
+    document.getElementById('totalValue').textContent = `$${valorTotal.toFixed(2)}`;
+    document.getElementById('totalStock').textContent = `${stockTotal} Unidades`;
+}
+
+// Abrir modal para agregar/editar
+function openModal(articulo = null) {
+    const modal = document.getElementById('articleModal');
+    const title = document.getElementById('modalTitle');
+    const form = document.getElementById('articleForm');
+    
+    if (articulo) {
+        title.textContent = 'Editar Artículo';
+        document.getElementById('articleId').value = articulo.id;
+        document.getElementById('articleName').value = articulo.nombre;
+        document.getElementById('articleDescription').value = articulo.descripcion;
+        document.getElementById('articleStock').value = articulo.existencias;
+        document.getElementById('articlePrice').value = articulo.precio;
+        document.getElementById('articleCategory').value = articulo.familia_id;
+        document.getElementById('articlePhoto').value = articulo.foto || '';
+    } else {
+        title.textContent = 'Agregar Artículo';
+        form.reset();
+        document.getElementById('articleId').value = '';
+    }
+    
+    modal.style.display = 'flex';
+}
+
+// Cerrar modal
+function closeModal() {
+    document.getElementById('articleModal').style.display = 'none';
+}
+
+// Manejar envío del formulario
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    const articuloId = document.getElementById('articleId').value;
+    const formData = {
+        nombre: document.getElementById('articleName').value,
+        descripcion: document.getElementById('articleDescription').value,
+        existencias: parseInt(document.getElementById('articleStock').value),
+        precio: parseFloat(document.getElementById('articlePrice').value),
+        familia_id: parseInt(document.getElementById('articleCategory').value),
+        foto: document.getElementById('articlePhoto').value || 'img/default.jpg'
+    };
+    
+    try {
+        let response;
+        
+        if (articuloId) {
+            // Actualizar artículo existente
+            response = await fetch(`${API_BASE_URL}/articulos/${articuloId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+        } else {
+            // Crear nuevo artículo
+            response = await fetch(`${API_BASE_URL}/articulos`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showMessage(`Artículo ${articuloId ? 'actualizado' : 'creado'} correctamente`, 'success');
+            closeModal();
+            loadArticulos();
+        } else {
+            showMessage(result.error || 'Error al guardar artículo', 'error');
+        }
+    } catch (error) {
+        console.error('Error al guardar artículo:', error);
+        showMessage('Error de conexión. Intente nuevamente.', 'error');
+    }
+}
+
+// Editar artículo
+function editarArticulo(articuloId) {
+    const articulo = articulos.find(a => a.id == articuloId);
+    if (articulo) {
+        openModal(articulo);
+    }
+}
+
+// Confirmar eliminación
+function confirmarEliminar(articuloId) {
+    const articulo = articulos.find(a => a.id == articuloId);
+    if (articulo) {
+        articuloAEliminar = articuloId;
+        document.getElementById('deleteArticleName').textContent = articulo.nombre;
+        document.getElementById('deleteModal').style.display = 'flex';
+    }
+}
+
+// Cerrar modal de eliminación
+function closeDeleteModal() {
+    document.getElementById('deleteModal').style.display = 'none';
+    articuloAEliminar = null;
+}
+
+// Confirmar eliminación
+async function confirmarEliminacion() {
+    if (!articuloAEliminar) return;
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/articulos/${articuloAEliminar}`, {
+            method: 'DELETE'
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            showMessage('Artículo eliminado correctamente', 'success');
+            closeDeleteModal();
+            loadArticulos();
+        } else {
+            showMessage(result.error || 'Error al eliminar artículo', 'error');
+        }
+    } catch (error) {
+        console.error('Error al eliminar artículo:', error);
+        showMessage('Error de conexión. Intente nuevamente.', 'error');
+    }
+}
+
+// Mostrar mensaje
+function showMessage(message, type) {
+    const alertDiv = document.getElementById('messageAlert');
+    alertDiv.textContent = message;
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.style.display = 'block';
+    
+    setTimeout(() => {
+        alertDiv.style.display = 'none';
+    }, 5000);
+}
+
+// Permitir búsqueda con Enter
+document.getElementById('searchInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        buscarArticulos();
+    }
+});
+</script>
 </body>
 </html>
