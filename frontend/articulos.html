@@ -411,9 +411,9 @@ function renderArticulos() {
     grid.innerHTML = articulos.map(articulo => `
         <div class="article-card" data-id="${articulo.id}">
             <div class="article-card-image">
-                <img src="${articulo.foto || 'img/default.jpg'}" 
+                <img src="${articulo.foto || 'assets/default.jpg'}" 
                      alt="${articulo.nombre}"
-                     onerror="this.src='img/default.jpg'">
+                     onerror="this.src='assets/default.jpg'">
             </div>
             <div class="article-card-content">
                 <div class="article-card-header">
