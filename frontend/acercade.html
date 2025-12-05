@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca del Desarrollador | Sistema de Gestión</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>circle{fill:%232d3748;}path{fill:%234fd1c5;}</style></defs><circle cx='50' cy='50' r='45'/><path d='M50,30a15,15,0,1,0,15,15A15,15,0,0,0,50,30Zm0,25A10,10,0,1,1,60,45,10,10,0,0,1,50,55Z'/><path d='M50,65a30,30,0,0,0-30,30H80A30,30,0,0,0,50,65Zm0,5A25,25,0,0,1,75,95H25A25,25,0,0,1,50,70Z'/></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- Header NO MODIFICADO -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -28,200 +28,144 @@
         </div>
     </header>
 
-    <!-- Contenido principal -->
     <main class="container">
-        <!-- Hero Section -->
+
         <section class="about-hero">
-            <h1>Acerca del Desarrollador</h1>
-            <p>Conoce al creador detrás de este sistema de gestión</p>
+            <h1>Acerca de los Desarrolladores</h1>
+            <p>Información de contacto de los creadores del sistema</p>
         </section>
-        
-        <!-- Perfil del desarrollador -->
-        <section class="developer-profile">
+
+        <!-- DESARROLLADOR 1 -->
+        <section class="developer-card">
             <div class="profile-image">
-                <div class="photo-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                    <p class="placeholder-text">Tu foto aquí</p>
-                </div>
+                <img src="img/ale.jpg" class="developer-photo">
             </div>
-            
+
             <div class="profile-info">
-                <h2>Tu Nombre Aquí</h2>
-                <div class="profile-title">Desarrollador Full Stack</div>
-                
-                <div class="profile-bio">
-                    <p>Soy un apasionado desarrollador de software con experiencia creando soluciones tecnológicas innovadoras. Mi enfoque principal está en el desarrollo web full stack, con especialización en tecnologías modernas.</p>
-                    
-                    <p>Este sistema de gestión es el resultado de combinar mis habilidades técnicas con mi comprensión de las necesidades empresariales modernas. Me esfuerzo por crear aplicaciones que no solo sean funcionales, sino también intuitivas y agradables para el usuario.</p>
-                    
-                    <p>Cuando no estoy programando, disfruto aprender nuevas tecnologías y compartir conocimientos a través de proyectos colaborativos.</p>
-                </div>
-                
+                <h2 class="developer-name">Alejandro Jessel Garrido Virgen</h2>
+                <p class="developer-career">Ingeniería en Sistemas Computacionales</p>
+
                 <div class="contact-info">
-                    <h3>Información de Contacto</h3>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>tuemail@ejemplo.com</span>
+                        <i class="fas fa-id-card"></i> Número de Control: 12345678
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+XX XXX XXX XXXX</span>
+                        <i class="fas fa-envelope"></i> l@pachuca.tecnm.mx
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Tu Ciudad, Tu País</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/tuusuario</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/tuusuario</span>
-                    </div>
-                </div>
-                
-                <div class="actions">
-                    <a href="mailto:tuemail@ejemplo.com" class="btn btn-primary">
-                        <i class="fas fa-paper-plane"></i> Contactar
-                    </a>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-file-download"></i> Descargar CV
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Habilidades técnicas -->
-        <section class="skills-section">
-            <h2>Habilidades Técnicas</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>Frontend</h3>
-                    <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-server"></i>
-                    <h3>Backend</h3>
-                    <p>Node.js, Express, Python, PHP, APIs</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>Bases de Datos</h3>
-                    <p>MySQL, MongoDB, PostgreSQL, Firebase</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Diseño Responsivo, Experiencia de Usuario</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile</h3>
-                    <p>Responsive Design, PWA, Mobile First</p>
-                </div>
-                
-                <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Herramientas</h3>
-                    <p>Git, Docker, AWS, CI/CD</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Proyectos destacados -->
-        <section class="projects-section">
-            <h2>Proyectos Destacados</h2>
-            
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Sistema de Gestión</h3>
-                        <p>Sistema completo de gestión empresarial con dashboard, usuarios y reportes.</p>
-                        <span class="badge badge-admin">HTML/CSS</span>
-                        <span class="badge badge-supervisor">JavaScript</span>
-                        <span class="badge badge-operador">Responsive</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-commerce</h3>
-                        <p>Plataforma de comercio electrónico con carrito de compras y panel de administración.</p>
-                        <span class="badge badge-admin">React</span>
-                        <span class="badge badge-supervisor">Node.js</span>
-                        <span class="badge badge-operador">MongoDB</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>App Móvil</h3>
-                        <p>Aplicación móvil para gestión de tareas con sincronización en la nube.</p>
-                        <span class="badge badge-admin">React Native</span>
-                        <span class="badge badge-supervisor">Firebase</span>
-                        <span class="badge badge-operador">Redux</span>
+                        <i class="fas fa-phone"></i> +52 551 816 9228
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Volver al dashboard -->
+
+        <!-- DESARROLLADOR 2 -->
+        <section class="developer-card">
+            <div class="profile-image">
+                <img src="assets/pao.jpeg" class="developer-photo">
+            </div>
+
+            <div class="profile-info">
+                <h2 class="developer-name">Itzel Paola García Lugo</h2>
+                <p class="developer-career">Ingeniería en Sistemas Computacionales</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-id-card"></i> Número de Control: 21200599
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i> l21200599@pachuca.tecnm.mx
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i> +52 772 200 5617
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="back-to-dashboard">
             <a href="dashboard.html" class="btn btn-primary">
                 <i class="fas fa-arrow-left"></i> Volver al Dashboard
             </a>
         </div>
+
     </main>
 
-    <!-- Footer -->
     <footer class="about-footer">
         <div class="container">
-            <p>Sistema de Gestión &copy; 2023. Todos los derechos reservados.</p>
-            <p class="footer-developer">Desarrollado con <i class="fas fa-heart"></i> por [Tu Nombre]</p>
+            <p>Tecnológico Nacional de México</p>
+            <p class="footer-developer">Instituto Tecnológico de Pachuca</p>
         </div>
     </footer>
 
-    <script>
-        // Verificar si el usuario está autenticado
-document.addEventListener('DOMContentLoaded', () => {
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    
-    if (!user) {
-        window.location.href = 'login.html';
-        return;
-    }
-    
-    document.getElementById('userName').textContent = `${user.nombre} ${user.paterno}`;
-    
-    // Cargar datos
-    loadTiposUsuario();
-    loadUsuarios();
-    
-    // Configurar eventos
-    setupEventListeners();
-});
+<style>
+    /* Tarjeta del desarrollador */
+.developer-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-// Cerrar sesión
-document.getElementById('logoutBtn').addEventListener('click', () => {
-    sessionStorage.removeItem('user');
-    window.location.href = 'login.html';
-});
-    </script>
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Foto */
+.developer-photo {
+    width: 220px;      /* ANTES: 170px */
+    height: 220px;     /* ANTES: 170px */
+    border-radius: 25%;
+    object-fit: cover;
+    border: 5px solid transparent;
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(135deg, #007bff, #6f42c1);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+
+/* Nombre */
+.developer-name {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Carrera */
+.developer-career {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    font-size: 1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+</style>
+
 </body>
 </html>
