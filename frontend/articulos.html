@@ -631,6 +631,31 @@ document.getElementById('searchInput').addEventListener('keypress', function(e) 
         buscarArticulos();
     }
 });
+
+// Verificar si el usuario está autenticado
+document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    
+    if (!user) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    document.getElementById('userName').textContent = `${user.nombre} ${user.paterno}`;
+    
+    // Cargar datos
+    loadTiposUsuario();
+    loadUsuarios();
+    
+    // Configurar eventos
+    setupEventListeners();
+});
+
+// Cerrar sesión
+document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.removeItem('user');
+    window.location.href = 'login.html';
+});
 </script>
 </body>
 </html>
